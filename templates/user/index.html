@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ curr_user.username }}的微博</title>
+    <link href="http://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/pure-min.css">
+    <style type="text/css">
+    .todo-table {
+        margin: 0 auto;
+    }
+    .center {
+        text-align: center;
+    }
+    </style>
+</head>
+<body>
+    <div class="center">
+        <h1>{{ curr_user.username }}的主页</h1>
+        <a href={{ url_for('weibo.all') }}>返回微博首页</a>
+    </div>
+        <table class="todo-table pure-table pure-table-horizontal pure-table-striped">
+            <thead>
+                <tr>
+                <!--<th>序列号</th>-->
+                    <th>微博</th>
+                    <th>删除</th>
+                    <th>修改</th>
+                    <th>最近更博时间</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for w in weibos %}
+                <tr>
+                    <td>{{w.content}} </td>
+                    <td><a href={{ url_for('weibo.delete',id=w.id) }}>删除</a></td>
+                <!-- url_for 可以传递参数，先匹配动态路由，如果动态路由匹配失败则变成 query 参数 -->
+                    <td><a href={{ url_for('weibo.edit',id=w.id) }}>修改</a></td>
+                    <td>{{ w.updated_time | format_time }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    <!--
+    <div>
+        {% for w in weibos %}
+        <div>
+            {{w.content}}
+            <a href={{ url_for('weibo.delete',id=w.id) }}>删除</a>
+            <a href={{ url_for('weibo.edit',id=w.id) }}>修改</a>
+            {{ w.updated_time | format_time }}
+        </div>
+        {% endfor %}
+    </div>
+    -->
+
+</body>
+</html>
+<!--xsrf=d40a58205d884331aa7f2a7304ad6345&-->
+<!--password=18372&-->
+<!--phone_num=13008900987-->

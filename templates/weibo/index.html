@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>微博详情</title>
+    <link href="http://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/pure-min.css">
+    <style type="text/css">
+    .todo-table {
+        margin: 0 auto;
+    }
+    .center {
+        text-align: center;
+    }
+    </style>
+</head>
+<body>
+    <div class="center">
+        <h1>微博详情</h1>
+        {{ user.username }} : {{ weibo.content }}  {{ weibo.update_time }}
+        <form action={{ url_for('comment.add',weiboid=weibo.id) }} method="post">
+            <div class="form-group">
+                <!--<label for="content">输入微博内容：</label>-->
+                <input type="text" id="content" class="form-control" name="content" placeholder="请输入评论内容">
+            </div>
+            <button class="btn btn-primary">发评论</button>
+        </form>
+        <!--
+        <form action={{ url_for('comment.add',weiboid=weibo.id) }} method="post">
+            <input type="text" name="content" placeholder="">
+            <button>发评论</button>
+        </form>
+        -->
+    </div>
+        <table class="todo-table pure-table pure-table-horizontal pure-table-striped">
+            <thead>
+                <tr>
+                <!--<th>序列号</th>-->
+                    <th>评论者</th>
+                    <th>评论</th>
+                    <th>发评论时间</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for c in comments %}
+                <tr>
+                <!--<td>{{ m.id }}</td>-->
+                    <td>{{ c.user.username }} </td>
+                    <td>{{ c.content }}</td>
+                <!-- url_for 可以传递参数，先匹配动态路由，如果动态路由匹配失败则变成 query 参数 -->
+                    <td>{{ c.updated_time | format_time }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    <!--
+        <h6>评论列表</h6>
+        <div>
+            {% for c in comments %}
+            <div>
+            {{ c.user.username }} ： {{ c.content }} {{ c.updated_time | format_time }}
+            </div>
+            {% endfor %}
+        </div>
+
+    -->
+    <a href={{ url_for('weibo.all') }}>返回</a>
+
+</body>
+</html>
+<!--xsrf=d40a58205d884331aa7f2a7304ad6345&-->
+<!--password=18372&-->
+<!--phone_num=13008900987-->

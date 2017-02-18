@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>修改微博</title>
+    <link href="http://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <style type="text/css">
+    .center {
+        text-align: center;
+    }
+    </style>
+</head>
+<body>
+    <div class="center">
+        <h1>修改微博</h1>
+    </div>
+    <form action={{ url_for("weibo.update",id=model.id) }} method="post">
+        <div class="form-group">
+        <!--<label for="content">输入微博内容：</label>-->
+            <input type="text" id="content" class="form-control" name="content" placeholder={{ model.content }}>
+        </div>
+        <button class="btn btn-primary">修改微博</button>
+    </form>
+    <!--
+    <div>
+        <form action={{ url_for('weibo.update',id=model.id) }} method="post">
+            <input type="text" name="content" placeholder={{ model.content }}>
+            <button>修改</button>
+        </form>
+    </div>
+    -->
+</body>
+</html>
