@@ -68,6 +68,8 @@ def register_routes(app):
     from routes.comment import main as routes_user
     app.register_blueprint(routes_user, url_prefix='/comment')
 
+    from routes import main as routes_all
+    app.register_blueprint(routes_all)
 
 # 自定义的命令行命令用来运行服务器
 @manager.command
@@ -84,7 +86,18 @@ def server():
     app.run(**config)
 
 
+# 过滤器
+@app.template_filter()
+def format_time(updatetime):
+    import time
+    print('传入过滤器的时间是', updatetime)
+    print('系统当前的时间是：', int(time.time()))
+    format = '%m/%d %H:%M:%S'
+    value = time.localtime(updatetime)
+    return time.strftime(format, value)
+
+
 if __name__ == '__main__':
-    # configure_manager()
-    configured_app()
-    # manager.run()  # 这个命令用于在cmd客户端进行数据库初始化/迁移
+    # configure_manager() # 数据库迁移配置
+    # configured_app() # app配置
+    manager.run()  # 这个命令用于在cmd客户端进行数据库初始化/迁移
