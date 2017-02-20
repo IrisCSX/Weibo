@@ -44,7 +44,6 @@
             <tbody>
             {% for c in comments %}
                 <tr>
-                <!--<td>{{ m.id }}</td>-->
                     <td>{{ c.user.username }} </td>
                     <td>{{ c.content }}</td>
                 <!-- url_for 可以传递参数，先匹配动态路由，如果动态路由匹配失败则变成 query 参数 -->
