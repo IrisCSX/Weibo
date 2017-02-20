@@ -15,7 +15,6 @@
     </style>
 </head>
 <body>
-    <div class="center">
         <h1>微博详情</h1>
         {{ user.username }} : {{ weibo.content }}  {{ weibo.update_time }}
         <form action={{ url_for('comment.add',weiboid=weibo.id) }} method="post">
@@ -31,7 +30,7 @@
             <button>发评论</button>
         </form>
         -->
-    </div>
+        <a href={{ url_for('weibo.all') }}>返回微博首页</a>
         <table class="todo-table pure-table pure-table-horizontal pure-table-striped">
             <thead>
                 <tr>
@@ -63,7 +62,7 @@
         </div>
 
     -->
-    <a href={{ url_for('weibo.all') }}>返回</a>
+
 
 </body>
 </html>

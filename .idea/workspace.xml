@@ -48,8 +48,18 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/weibo/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="247">
-              <caret line="43" column="19" selection-start-line="43" selection-start-column="19" selection-end-line="43" selection-end-column="19" />
+            <state relative-caret-position="209">
+              <caret line="29" column="32" selection-start-line="29" selection-start-column="32" selection-end-line="29" selection-end-column="32" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="weibos.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/weibo/weibos.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="171">
+              <caret line="24" column="18" selection-start-line="24" selection-start-column="18" selection-end-line="24" selection-end-column="18" />
               <folding />
             </state>
           </provider>
@@ -85,20 +95,20 @@
         <option value="$PROJECT_DIR$/temporary_app.py" />
         <option value="$PROJECT_DIR$/../enter.html" />
         <option value="$PROJECT_DIR$/templates/user/enter.html" />
-        <option value="$PROJECT_DIR$/templates/weibo/weibos.html" />
         <option value="$PROJECT_DIR$/templates/user/index.html" />
         <option value="$PROJECT_DIR$/templates/weibo/edit.html" />
         <option value="$PROJECT_DIR$/config.py" />
         <option value="$PROJECT_DIR$/app.py" />
         <option value="$PROJECT_DIR$/wsgi.py" />
         <option value="$PROJECT_DIR$/models/user.py" />
+        <option value="$PROJECT_DIR$/templates/weibo/weibos.html" />
         <option value="$PROJECT_DIR$/templates/weibo/index.html" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="421" />
-    <option name="y" value="30" />
+    <option name="x" value="458" />
+    <option name="y" value="42" />
     <option name="width" value="899" />
     <option name="height" value="720" />
   </component>
@@ -423,7 +433,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="421" y="30" width="899" height="720" extended-state="0" />
+    <frame x="458" y="42" width="899" height="720" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2485482" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -663,13 +673,6 @@
     <entry file="file://$PROJECT_DIR$/../enter.html" />
     <entry file="file://$PROJECT_DIR$/templates/todo_index.html" />
     <entry file="file://$PROJECT_DIR$/../enter_2.html" />
-    <entry file="file://$PROJECT_DIR$/templates/weibo/weibos.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="57">
-          <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="56" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/user/enter.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="132">
@@ -768,10 +771,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/templates/weibo/weibos.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="24" column="18" selection-start-line="24" selection-start-column="18" selection-end-line="24" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/templates/weibo/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="43" column="19" selection-start-line="43" selection-start-column="19" selection-end-line="43" selection-end-column="19" />
+        <state relative-caret-position="209">
+          <caret line="29" column="32" selection-start-line="29" selection-start-column="32" selection-end-line="29" selection-end-column="32" />
           <folding />
         </state>
       </provider>
