@@ -16,7 +16,6 @@ class User(db.Model, ModelMixin):
 
 
     def __init__(self, form):
-        print('传入生成用户的form数据：', form)
         self.username = form.get('username', '')
         self.passworld = form.get('passworld', '')
         self.admin = form.get('admin', 10)
@@ -54,8 +53,12 @@ class User(db.Model, ModelMixin):
     def valid_login(self):
         user = User.query.filter_by(username=self.username).first()
         print('根据名字查询出来的用户：',user)
-        valid_pwd = (self.passworld == user.passworld)
-        valid_user = not (user is None)
+        valid_user = True
+        valid_pwd = True
+        if user is None:
+            valid_user = False
+        else:
+            valid_pwd = (self.passworld == user.passworld)
         msgs = []
         if not valid_user:
             msg = '用户不存在',
