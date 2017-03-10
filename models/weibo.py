@@ -17,6 +17,11 @@ class Weibo(db.Model, ModelMixin):
         self.content = form.get('content', '')
         self.updated_time = int(time.time())
 
-    # 更新微博内容
+
     def _update(self, form):
+        """
+        更新微博内容
+        :param form:
+        :return:
+        """
         self.content = form.get('content', '')

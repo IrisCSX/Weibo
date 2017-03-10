@@ -20,17 +20,31 @@ class User(db.Model, ModelMixin):
         self.passworld = form.get('passworld', '')
         self.admin = form.get('admin', 10)
 
-    # 更新用户密码
+
     def _update(self, form):
+        """
+        更新用户密码
+        :param form:
+        :return:
+        """
         print('user update', self, form)
         self.passworld = form.get('passworld', 123)
 
-    # 用户名不重
+
     def valid_username(self, username):
+        """
+        用户名不重
+        :param username:
+        :return:
+        """
         return User.query.filter_by(username=self.username).first() == None
 
-    # 验证注册用户：要有不重的用户名，密码长度大于6
+
     def valid_register(self):
+        """
+        验证注册用户
+        :return:
+        """
         valid_username = self.valid_username(self.username)
         print('名字重名吗：',valid_username)
         valid_username_len = len(self.username) >= 0
@@ -49,8 +63,12 @@ class User(db.Model, ModelMixin):
         print('注册有效吗：',status)
         return status, msgs
 
-    # 验证登录用户：密码和名字相同
+
     def valid_login(self):
+        """
+        登录用户有效验证
+        :return:
+        """
         user = User.query.filter_by(username=self.username).first()
         print('根据名字查询出来的用户：',user)
         valid_user = True

@@ -20,27 +20,19 @@
     </div>
         <form action={{ url_for("weibo.add") }} method="post">
             <div class="form-group">
-                <!--<label for="content">输入微博内容：</label>-->
                 <input type="text" id="content" class="form-control" name="content" placeholder="请输入微博内容">
             </div>
             <button class="btn btn-primary">发微博</button>
         </form>
 
-        <!--
-        <form action={{ url_for("weibo.add") }} method="post">
-            <input type="text" name="content" placeholder="">
-            <button>发微博</button>
-        </form>
-        -->
+
         <a href={{ url_for('user.index') }}><h3>{{ curr_user.username }}的主页</h3></a>
-        <!--<h6>所有微博</h6>-->
         <div class="center">
             <h6>所有用户的微博</h6>
         </div>
         <table class="todo-table pure-table pure-table-horizontal pure-table-striped">
             <thead>
                 <tr>
-                <!--<th>序列号</th>-->
                     <th>博主</th>
                     <th>微博</th>
                     <th>最近更博时间</th>
@@ -49,26 +41,13 @@
             <tbody>
             {% for m in models %}
                 <tr>
-                <!--<td>{{ m.id }}</td>-->
                     <td>{{ m.user.username }} </td>
                     <td><a href={{ url_for('weibo.index',id=m.id) }}>{{ m.content }}</a></td>
-                <!-- url_for 可以传递参数，先匹配动态路由，如果动态路由匹配失败则变成 query 参数 -->
                     <td>{{ m.updated_time | format_time }}</td>
                 </tr>
             {% endfor %}
             </tbody>
         </table>
-        <!--
-        {% for m in models %}
-        <div>
-            {{ m.user.username }} ：
-            <a href={{ url_for('weibo.index',id=m.id) }}>{{ m.content }}</a>
-            {{ m.updated_time | format_time }}
-        </div>
-        {% endfor %}
-        -->
+
 </body>
 </html>
-<!--xsrf=d40a58205d884331aa7f2a7304ad6345&-->
-<!--password=18372&-->
-<!--phone_num=13008900987-->

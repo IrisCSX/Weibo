@@ -2,11 +2,8 @@ from flask_sqlalchemy import SQLAlchemy
 from flask import Flask
 import time
 
-'''
-搬到服务器上去要留这一句
 db = SQLAlchemy()
-'''
-# 以下几句一直到函数前都是临时的，最后要删除的
+
 app = Flask(__name__)
 app.secret_key = 'secret key'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
